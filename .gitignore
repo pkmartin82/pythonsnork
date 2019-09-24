@@ -1,0 +1,16 @@
+# Eclipse
+**/.classpath
+**/.project
+**/.pydevproject
+**/.settings/
+**/bin
+ 
+# Mac
+**/.DS_Store
+ 
+# Maven
+**/log/
+**/target/
+
+# Logs
+**/logs/
