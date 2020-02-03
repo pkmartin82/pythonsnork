@@ -2,10 +2,10 @@
 #print("Hello, World!\n\nWhat up!")
 
 # Get input from user
-#name = input("Please enter your name: ")
-#print(name)
+name = input("Please enter your name: ")
+print("Hello, {0}".format(name))
 
 
-x = int(input("Enter a number: "))
-y = x + 2
-print("y = {}".format(str(y)).upper())
+# x = int(input("Enter a number: "))
+# y = x + 2
+# print("y = {}".format(str(y)).upper())
