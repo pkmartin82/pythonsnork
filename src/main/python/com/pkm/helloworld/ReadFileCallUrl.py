@@ -1,11 +1,15 @@
 import os
-import urllib.request
+import sys
+import urllib2
 
-fileDir = os.path.dirname(os.path.realpath('__file__'))
-inputFile = os.path.join(fileDir, "src/main/resources/schools.txt")
-print("Reading a file: '{}'".format(inputFile))
 
-with open(inputFile) as fp:
-   for cnt, line in enumerate(fp):
-       print("Line {}: {}".format(cnt, line))
-       contents = urllib.request.urlopen("http://example.com/foo/bar/{}".format(line)).read()
+inputFile = os.path.join(sys.path[0], "schools.txt")
+print("Refreshing Cache for schools found in: {0}".format(inputFile))
+
+with open(inputFile, "r") as fp:
+	for cnt, line in enumerate(fp):
+		print(">>>>\n>>>>\n>>>>Refresh Cache for SchoolId={0}".format(line).rstrip("\n"))
+		contents = urllib2.urlopen("https://sfs.iprod.afford.com/RCW/Home/RefreshDataCache?schoolId={0}".format(line)).read()
+		print(">>>>{0}".format(contents))
+
+print("Done Refreshing Cache")
